@@ -1,0 +1,165 @@
+:root{
+    --com-padd:100px;
+    --coral:rgb(255, 127, 80);
+    --coral-trans:rgba(255, 127, 80,0.6);
+    --font-size-h1:4rem;
+    --font-size-subh1:2.5rem;
+    --cubic:cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    
+}
+
+
+/* note: skills  */
+#skills{
+    padding: 60px var(--com-padd);
+    border-radius: 10px;
+    /* border: 2px solid var(--coral); */
+    box-shadow: 0px 0px 10px var(--coral);
+    margin: 20px 0px;
+    div{
+        box-shadow: 0px 0px 20px -5px var(--coral);
+        position: relative;
+    }
+    div::before{
+        content: '100% \2713';
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.8rem;
+        color:transparent;
+        width: 154px;
+        position: absolute;
+        aspect-ratio: 1;
+        background-color: #1e1e1e;
+        /* background-color: aqua; */
+        border-radius: 50%;
+        right: 15%;
+        top:12%;
+        
+        
+    }
+    div::after{
+        content: '';
+        width: 160px;
+        position: absolute;
+        aspect-ratio: 1;
+        background-color: #1e1e1e;
+        /* background-color: var(--coral); */
+        background-image: conic-gradient(var(--coral) var(--percentage),transparent var(--percentage));
+        border-radius: 50%;
+        right: 14.75%;
+        top:10.4%;
+        z-index: -1;
+        filter: blur(5px);
+        transition: --percentage 0.5s ease-in-out;
+        
+    }
+    div:hover::after{
+        --percentage:100%;
+    }
+    div:hover::before{
+        color: var(--coral);
+    }
+    ul{
+        
+        li{
+            position: relative;
+        }
+        li::marker{
+            color:var(--coral);
+        }
+        li:nth-child(1)::before{
+            content: '';
+            position: absolute;
+            width: 2%;
+            aspect-ratio: 1;
+            background-color: var(--coral-trans);
+            filter: blur(5px);
+            border-radius: 50%;
+            z-index: -1;
+            top:-10%;
+            left: -8%;
+            animation:scale-1 2s infinite 1s;
+        }
+        li:nth-child(1)::after{
+            content: '';
+            position: absolute;
+            width: 3%;
+            aspect-ratio: 1;
+            background-color: var(--coral-trans);
+            filter: blur(5px);
+            border-radius: 50%;
+            z-index: -1;
+            bottom:-800%;
+            left: 20%;
+            animation:scale-1 2s infinite 0s;
+        }
+        li:nth-child(2)::after{
+            content: '';
+            position: absolute;
+            width: 3%;
+            aspect-ratio: 1;
+            background-color: var(--coral-trans);
+            filter: blur(5px);
+            border-radius: 50%;
+            z-index: -1;
+            bottom:-600%;
+            left: 80%;
+            animation:scale-1 2.5s infinite 0s;
+        }
+        li:nth-child(2)::before{
+            content: '';
+            position: absolute;
+            width: 3%;
+            aspect-ratio: 1;
+            background-color: var(--coral-trans);
+            filter: blur(5px);
+            border-radius: 50%;
+            z-index: -1;
+            top:0%;
+            left: 40%;
+            animation:scale-1 2.5s infinite 1s;
+        }
+        li:nth-child(3)::before{
+            content: '';
+            position: absolute;
+            width: 3%;
+            aspect-ratio: 1;
+            background-color: var(--coral-trans);
+            filter: blur(5px);
+            border-radius: 50%;
+            z-index: -1;
+            top:-600%;
+            left: 60%;
+            animation:scale-1 2s infinite 0.5s;
+        }
+        li:nth-child(3)::after{
+            content: '';
+            position: absolute;
+            width: 2%;
+            aspect-ratio: 1;
+            background-color: var(--coral-trans);
+            filter: blur(5px);
+            border-radius: 50%;
+            z-index: -1;
+            top:-400%;
+            left: 100%;
+            animation:scale-1 1.8s infinite 0s;
+        }
+        
+    }
+}
+/* sub-title: animating scale */
+@keyframes scale-1 {
+    0%{
+        scale: 0.8;
+    }
+    50%{
+        scale:1 ;
+    }
+    100%{
+        scale: 0.8;
+    }
+}
