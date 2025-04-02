@@ -695,6 +695,7 @@ nav{
         position: relative;
     }
     div::before{
+        content: var(--hello,'');
         content: '100% \2713';
         display: flex;
         flex-direction: column;
@@ -1381,6 +1382,7 @@ nav{
             right: 50%;
             transform: translateX(50%);
             top:50%;
+            /* opacity: 0; */
             
         }
         div::after{
@@ -1413,11 +1415,11 @@ nav{
         }
         .social-div{
             gap:30px;
-            a{
+            /* a{
                 animation: scrolling forwards;
                 animation-timeline: view();
                 animation-range: entry;
-            }
+            } */
             
         }
     }
